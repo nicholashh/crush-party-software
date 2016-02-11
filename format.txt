@@ -1,0 +1,19 @@
+
+name: B
+
+email: H
+
+gender: E
+
+matches1: F G
+F: Romantic
+G: Friendship
+
+matches2: C I|J|K
+C: College
+I|J|K: Major
+
+info: C D I|J|K
+D: Year
+
+questions: L M N O P Q R S T U V W X Y Z
