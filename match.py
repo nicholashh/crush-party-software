@@ -100,7 +100,7 @@ def getNetID (person):
 
     return constant2string[person[index_of_["email"]]].split("@")[0].lower()
 
-with open('data.csv', 'r', encoding='utf-8') as data_file:
+with open('data.csv', 'r', encoding='utf-8', errors='ignore') as data_file:
 
     i = 0
     for row in csv.reader(data_file):
@@ -237,8 +237,16 @@ for person1id in people:
                 if questions_are_weighted:
 
                     question_weight = weight[question]
-                    person1weight = 1.0 * question_weight[person1answer]
-                    person2weight = 1.0 * question_weight[person2answer]
+
+                    try:
+                        person1weight = 1.0 * question_weight[person1answer]
+                    except:
+                        person1weight = 0.0
+
+                    try:
+                        person2weight = 1.0 * question_weight[person2answer]
+                    except:
+                        person2weight = 0.0
 
                     score += 1.0 - abs(person1weight - person2weight)
 
